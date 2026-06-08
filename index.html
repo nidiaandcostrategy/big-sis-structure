@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Sis Foundation — Leadership Structure</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9913A;
+    --gold-light: #F0C97A;
+    --cream: #FDF6EC;
+    --brown: #3B2A1A;
+    --warm-gray: #7A6A5A;
+    --white: #FFFFFF;
+    --green: #4A8C5C;
+    --red: #C0392B;
+    --yellow: #E0A800;
+    --card-bg: #FFFAF3;
+    --border: #E8D8C0;
+    --shadow: 0 4px 24px rgba(59,42,26,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--brown);
+    color: var(--white);
+    padding: 36px 24px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(201,145,58,0.15);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -20px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(201,145,58,0.10);
+  }
+  header .label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+    position: relative;
+  }
+  header h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(26px, 6vw, 40px);
+    font-weight: 800;
+    line-height: 1.15;
+    position: relative;
+  }
+  header p {
+    margin-top: 12px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    position: relative;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress-bar-section {
+    background: var(--brown);
+    padding: 0 24px 24px;
+    text-align: center;
+  }
+  .progress-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+  .progress-track {
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    height: 14px;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 20px;
+    transition: width 0.5s ease;
+    width: 0%;
+  }
+  #progress-count {
+    font-size: 13px;
+    color: var(--gold-light);
+    margin-top: 6px;
+  }
+
+  /* ── NAV TABS ── */
+  .tab-nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    padding: 20px 20px 0;
+    scrollbar-width: none;
+    background: var(--cream);
+    border-bottom: 2px solid var(--border);
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    border: 2px solid var(--border);
+    border-bottom: none;
+    background: transparent;
+    border-radius: 12px 12px 0 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--warm-gray);
+    transition: all 0.2s;
+  }
+  .tab-btn.active {
+    background: var(--white);
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* ── MAIN ── */
+  main { max-width: 700px; margin: 0 auto; padding: 0 16px 80px; }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* ── SECTION CARDS ── */
+  .section-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 24px;
+    margin-top: 24px;
+    box-shadow: var(--shadow);
+  }
+  .section-card h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-card h2 .icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-card .subtitle {
+    font-size: 14px;
+    color: var(--warm-gray);
+    margin-bottom: 20px;
+    padding-left: 46px;
+  }
+
+  /* ── ROLE CARDS ── */
+  .role-card {
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-left: 5px solid var(--gold);
+    background: var(--white);
+  }
+  .role-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .owner-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: var(--gold);
+    color: var(--white);
+  }
+  .role-desc {
+    font-size: 14px;
+    color: var(--warm-gray);
+    margin: 8px 0 14px;
+  }
+  .owns-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .owns-tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* ── CHECKLISTS ── */
+  .checklist { list-style: none; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.2s;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li.done { opacity: 0.45; text-decoration: line-through; }
+  .check-box {
+    width: 26px; height: 26px;
+    border: 2.5px solid var(--gold);
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s;
+    margin-top: 1px;
+  }
+  .checklist li.done .check-box {
+    background: var(--gold);
+    color: white;
+  }
+  .check-text { flex: 1; }
+  .check-owner {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    background: var(--cream);
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    margin-top: 3px;
+    display: inline-block;
+  }
+
+  /* ── STATUS BADGES ── */
+  .status { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 20px; }
+  .status.green { background: #E6F4EC; color: var(--green); }
+  .status.yellow { background: #FFF8E1; color: var(--yellow); }
+  .status.red { background: #FDECEA; color: var(--red); }
+  .status::before { content: '●'; font-size: 10px; }
+
+  /* ── WORKSHEET ── */
+  .worksheet-field {
+    margin-bottom: 18px;
+  }
+  .worksheet-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 6px;
+  }
+  .worksheet-field input,
+  .worksheet-field select,
+  .worksheet-field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    background: var(--white);
+    color: var(--brown);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .worksheet-field input:focus,
+  .worksheet-field select:focus,
+  .worksheet-field textarea:focus {
+    border-color: var(--gold);
+  }
+  .worksheet-field textarea { min-height: 80px; resize: vertical; }
+
+  /* ── WEEKLY RHYTHM ── */
+  .day-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    border-left: 5px solid var(--border);
+  }
+  .day-card.saturday { border-left-color: var(--gold); }
+  .day-card h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .day-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .day-task {
+    font-size: 13px;
+    padding: 4px 12px;
+    background: var(--cream);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  /* ── PIPELINE TABLE ── */
+  .pipeline {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+  }
+  .pipeline th {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--brown);
+    color: var(--white);
+  }
+  .pipeline th:first-child { border-radius: 10px 0 0 0; }
+  .pipeline th:last-child { border-radius: 0 10px 0 0; }
+  .pipeline td {
+    padding: 12px 14px;
+    font-size: 15px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pipeline tr:last-child td { border-bottom: none; }
+  .pipeline tr:nth-child(even) td { background: var(--cream); }
+
+  /* ── METRICS ── */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .metric-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+  }
+  .metric-card .metric-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--gold);
+  }
+  .metric-card .metric-label {
+    font-size: 13px;
+    color: var(--warm-gray);
+    margin-top: 4px;
+  }
+  .metric-card input[type="number"] {
+    font-family: 'Sora', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gold);
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: linear-gradient(135deg, var(--brown) 0%, #5a3d25 100%);
+    border-radius: 16px;
+    padding: 22px 22px;
+    color: white;
+    margin-top: 20px;
+  }
+  .callout .callout-head {
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .callout p { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.85); }
+
+  /* ── SAVE BUTTON ── */
+  .btn-save {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: var(--gold);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s;
+  }
+  .btn-save:hover { background: #b07a28; }
+
+  /* ── MENTEE ROSTER ── */
+  .mentee-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .mentee-card:focus-within {
+    box-shadow: 0 0 0 2px var(--gold);
+    border-color: var(--gold);
+  }
+  .mentee-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .mentee-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: white;
+    flex-shrink: 0;
+  }
+  .mentee-name-preview {
+    flex: 1;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--brown);
+  }
+  .mentee-name-preview.placeholder { color: var(--warm-gray); font-weight: 400; }
+  .mentee-toggle {
+    font-size: 18px;
+    color: var(--warm-gray);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .mentee-toggle.open { transform: rotate(180deg); }
+  .mentee-body {
+    display: none;
+    padding: 0 16px 18px;
+    border-top: 1px solid var(--border);
+  }
+  .mentee-body.open { display: block; }
+  .mentee-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .mentee-grid .full { grid-column: 1 / -1; }
+  .mentee-field label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 5px;
+  }
+  .mentee-field input, .mentee-field select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    background: var(--cream);
+    color: var(--brown);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .mentee-field input:focus, .mentee-field select:focus { border-color: var(--gold); background: white; }
+  .mentee-section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin: 16px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    grid-column: 1 / -1;
+  }
+  .delete-mentee {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px;
+    background: #FDECEA;
+    color: var(--red);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .mentee-count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gold);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 2px 10px;
+    margin-left: 8px;
+  }
+
+  /* ── TOAST ── */
+  #toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--green);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 999;
+    pointer-events: none;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+  .section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 14px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="label">For Review — Director</div>
+  <h1>Big Sis Foundation<br>Leadership Structure</h1>
+  <p>Built for clarity. Designed for action.</p>
+</header>
+
+<div class="progress-bar-section">
+  <div class="progress-label">Setup Progress</div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="progress-count">0 of 0 items checked</div>
+</div>
+
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('roles')">👥 Roles</button>
+  <button class="tab-btn" onclick="switchTab('thisweek')">✅ This Week</button>
+  <button class="tab-btn" onclick="switchTab('rhythm')">📅 Weekly Rhythm</button>
+  <button class="tab-btn" onclick="switchTab('metrics')">📊 Dashboard</button>
+  <button class="tab-btn" onclick="switchTab('meeting')">🗓 Meeting</button>
+</div>
+
+<main>
+
+<!-- ══════════════ TAB: ROLES ══════════════ -->
+<div id="tab-roles" class="tab-content active">
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#FFF0D0">🏛️</span>Why Structure Matters</h2>
+    <div class="subtitle">Most nonprofits fail by focusing only on programs.</div>
+    <p style="margin-bottom:14px;">A healthy organization runs on <strong>four pillars</strong>:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px;">
+      <div style="background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:24px">🎯</div>
+        <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;margin-top:6px">Programs</div>
+        <div style="font-size:12px;color:var(--warm-gray)">Serving girls</div>
+      </div>
+      <div style="background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:24px">🤝</div>
+        <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;margin-top:6px">People</div>
+        <div style="font-size:12px;color:var(--warm-gray)">Mentors, volunteers</div>
+      </div>
+      <div style="background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:24px">💰</div>
+        <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;margin-top:6px">Funding</div>
+        <div style="font-size:12px;color:var(--warm-gray)">Money & resources</div>
+      </div>
+      <div style="background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:14px;text-align:center;">
+        <div style="font-size:24px">🧭</div>
+        <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;margin-top:6px">Governance</div>
+        <div style="font-size:12px;color:var(--warm-gray)">Leadership & strategy</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <p style="margin-bottom:14px;font-weight:600;">Every business and nonprofit needs:</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:4px;">
+      <div style="display:flex;align-items:center;gap:14px;background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+        <span style="font-size:22px;flex-shrink:0">💎</span>
+        <div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;">Something valuable to offer</div><div style="font-size:13px;color:var(--warm-gray)">Your program, your mission</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+        <span style="font-size:22px;flex-shrink:0">🤝</span>
+        <div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;">People to deliver it</div><div style="font-size:13px;color:var(--warm-gray)">Mentors, staff, volunteers</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+        <span style="font-size:22px;flex-shrink:0">💰</span>
+        <div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;">Money to sustain it</div><div style="font-size:13px;color:var(--warm-gray)">Funding, donations, grants</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+        <span style="font-size:22px;flex-shrink:0">🧭</span>
+        <div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;">Leadership to steer it</div><div style="font-size:13px;color:var(--warm-gray)">Vision, strategy, accountability</div></div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:18px">
+      <div class="callout-head">The Formula</div>
+      <p>Clarity → Alignment → Execution → Results</p>
+    </div>
+  </div>
+
+  <!-- CURRENT TEAM -->
+  <div class="section-card">
+    <h2><span class="icon" style="background:#FFF0D0">⚡</span>Current Team</h2>
+    <div class="subtitle">Confirm ownership for each role below.</div>
+
+    <div class="role-card" style="border-left-color:#C9913A">
+      <h3>Executive Director <span class="owner-badge" style="background:#C9913A">Anyla</span></h3>
+      <div class="role-desc">Vision, relationships, and final approvals. The ultimate decision-maker.</div>
+      <div class="section-title">OWNS</div>
+      <div class="owns-list">
+        <span class="owns-tag">Program direction</span>
+        <span class="owns-tag">Mentor recruitment</span>
+        <span class="owns-tag">Community partnerships</span>
+        <span class="owns-tag">Workshop approval</span>
+        <span class="owns-tag">Budget requests</span>
+        <span class="owns-tag">Escalations</span>
+      </div>
+    </div>
+
+    <div class="role-card" style="border-left-color:#4A8C5C">
+      <h3>Operations & Communications Lead <span class="owner-badge" style="background:#4A8C5C">Nidia</span></h3>
+      <div class="role-desc">Chief of Staff. Execution, systems, and accountability. Keeps everything moving.</div>
+      <div class="section-title">OWNS</div>
+      <div class="owns-list">
+        <span class="owns-tag">Communication systems</span>
+        <span class="owns-tag">Calendars</span>
+        <span class="owns-tag">Project management</span>
+        <span class="owns-tag">Social media</span>
+        <span class="owns-tag">Parent communications</span>
+        <span class="owns-tag">Weekly accountability</span>
+      </div>
+      <div class="section-title" style="margin-top:14px">WEEKLY TASKS</div>
+      <ul class="checklist" id="nidia-tasks">
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Friday parent email sent<div class="check-owner">Nidia · Weekly</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Friday mentor email sent<div class="check-owner">Nidia · Weekly</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Wednesday mentor attendance check<div class="check-owner">Nidia · Weekly</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Monthly content calendar published<div class="check-owner">Nidia · Monthly</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Workshop scheduling tracker updated<div class="check-owner">Nidia · Weekly</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Shared calendar maintained<div class="check-owner">Nidia · Ongoing</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Meeting agendas prepared<div class="check-owner">Nidia · Weekly</div></div></li>
+      </ul>
+    </div>
+
+    <div class="role-card" style="border-left-color:#5B8DD9">
+      <h3>Administrative Coordinator <span class="owner-badge" style="background:#5B8DD9">Alicia</span></h3>
+      <div class="role-desc">Records, rosters, compliance. The data backbone of the org.</div>
+      <div class="section-title">OWNS</div>
+      <div class="owns-list">
+        <span class="owns-tag">Rosters</span>
+        <span class="owns-tag">Attendance</span>
+        <span class="owns-tag">Forms</span>
+        <span class="owns-tag">Documentation</span>
+        <span class="owns-tag">Volunteer records</span>
+      </div>
+      <div class="section-title" style="margin-top:14px">RESPONSIBILITIES</div>
+      <ul class="checklist" id="alicia-tasks">
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Registration tracking current<div class="check-owner">Alicia</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Mentor roster up to date<div class="check-owner">Alicia</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Student roster up to date<div class="check-owner">Alicia</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Permission slips collected<div class="check-owner">Alicia</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Attendance logs maintained<div class="check-owner">Alicia</div></div></li>
+        <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Background checks tracked<div class="check-owner">Alicia</div></div></li>
+      </ul>
+    </div>
+
+    <div class="role-card" style="border-left-color:#8B6FCB">
+      <h3>Treasurer / Finance Chair <span class="owner-badge" style="background:#8B6FCB">Daizha</span></h3>
+      <div class="role-desc">Budget tracking, fundraising goals, grant reporting, financial transparency.</div>
+      <div class="owns-list" style="margin-top:12px">
+        <span class="owns-tag">Budget tracking</span>
+        <span class="owns-tag">Fundraising goals</span>
+        <span class="owns-tag">Grant reporting</span>
+        <span class="owns-tag">Financial transparency</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROLES TO FILL -->
+  <div class="section-card">
+    <h2><span class="icon" style="background:#FDECEA">🔍</span>Roles Still Needed</h2>
+    <div class="subtitle">These can start as volunteers or board members.</div>
+
+    <div class="role-card" style="border-left-color:#E0A800;opacity:0.85">
+      <h3>Mentor Coordinator <span style="font-size:12px;padding:4px 10px;border:1.5px dashed var(--yellow);border-radius:20px;color:var(--yellow);font-weight:700;">UNFILLED</span></h3>
+      <div class="role-desc">Mentor engagement, onboarding, training, and retention.</div>
+      <div class="worksheet-field">
+        <label>Who should fill this? (name or "recruit")</label>
+        <input type="text" placeholder="e.g. Volunteer, board member..." />
+      </div>
+    </div>
+
+    <div class="role-card" style="border-left-color:#E0A800;opacity:0.85">
+      <h3>Program Coordinator <span style="font-size:12px;padding:4px 10px;border:1.5px dashed var(--yellow);border-radius:20px;color:var(--yellow);font-weight:700;">UNFILLED</span></h3>
+      <div class="role-desc">Workshops, speakers, curriculum, and activities. Secures speakers 4–6 weeks out.</div>
+      <div class="worksheet-field">
+        <label>Who should fill this?</label>
+        <input type="text" placeholder="e.g. Board member, volunteer..." />
+      </div>
+    </div>
+
+    <div class="role-card" style="border-left-color:#E0A800;opacity:0.85">
+      <h3>Development & Fundraising Lead <span style="font-size:12px;padding:4px 10px;border:1.5px dashed var(--yellow);border-radius:20px;color:var(--yellow);font-weight:700;">UNFILLED</span></h3>
+      <div class="role-desc">Sponsorships, donations, grants, community visibility, and partnerships.</div>
+      <div class="worksheet-field">
+        <label>Who should fill this?</label>
+        <input type="text" placeholder="e.g. Board member, volunteer..." />
+      </div>
+    </div>
+
+    <button class="btn-save" onclick="showToast('Role assignments saved ✓')">Save Role Assignments</button>
+  </div>
+
+</div>
+
+<!-- ══════════════ TAB: THIS WEEK ══════════════ -->
+<div id="tab-thisweek" class="tab-content">
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#FDECEA">🔥</span>Immediate Questions</h2>
+    <div class="subtitle">Someone needs to know all of this by Wednesday.</div>
+
+    <div class="section-title">MENTORS</div>
+    <ul class="checklist" id="mentors-check">
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Total mentor count confirmed?<div class="check-owner">Anyla</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">All background checks complete?<div class="check-owner">Anyla</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Contact info complete for all mentors?<div class="check-owner">Anyla</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Availability confirmed?<div class="check-owner">Anyla</div></div></li>
+    </ul>
+
+    <div class="divider"></div>
+    <div class="section-title">STUDENTS</div>
+    <ul class="checklist" id="students-check">
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">How many girls registered?<div class="check-owner">Nidia</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">How many confirmed?<div class="check-owner">Nidia</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Ages documented?<div class="check-owner">Nidia</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Schools documented?<div class="check-owner">Nidia</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Parent contact list complete?<div class="check-owner">Nidia</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Parents on Band app?<div class="check-owner">Nidia</div></div></li>
+    </ul>
+
+    <div class="divider"></div>
+    <div class="section-title">OPERATIONS</div>
+    <ul class="checklist" id="ops-check">
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Next workshop confirmed?<div class="check-owner">Anyla / Program Lead</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Supplies identified and sourced?<div class="check-owner">Program Lead</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Attendance process decided?<div class="check-owner">Alicia</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Emergency contacts collected?<div class="check-owner">Alicia</div></div></li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#E6F4EC">📡</span>Systems To Set Up</h2>
+    <div class="subtitle">Get these running before the first session.</div>
+
+    <div class="section-title">COMMUNICATION CHANNELS</div>
+    <ul class="checklist" id="systems-check">
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Mentor group created (announcements + discussion + resources)<div class="check-owner">Anyla</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Parent group created (announcements, events, reminders, photos)<div class="check-owner">Anyla</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Shared leadership calendar created<div class="check-owner">Nidia</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Recurring weekly tasks added to calendar<div class="check-owner">Nidia</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Photo permissions form distributed to parents<div class="check-owner">Alicia</div></div></li>
+    </ul>
+
+    <div class="divider"></div>
+    <div class="section-title">COMMITTEES TO RECRUIT</div>
+    <ul class="checklist" id="committees-check">
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Program Committee — volunteer or board member identified<div class="check-owner">Anyla</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Fundraising Committee — volunteer or board member identified<div class="check-owner">Anyla</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Mentor Committee — volunteer or board member identified<div class="check-owner">Anyla</div></div></li>
+    </ul>
+  </div>
+
+  <div class="callout" style="margin-top:0">
+    <div class="callout-head">⚠️ The Missing Piece</div>
+    <p>Nobody can measure outcomes if everyone is just busy doing tasks. Every task needs an <strong>Owner</strong>, a <strong>Due Date</strong>, and a <strong>Status</strong> (Green / Yellow / Red). Build that habit now.</p>
+  </div>
+
+</div>
+
+<!-- ══════════════ TAB: WEEKLY RHYTHM ══════════════ -->
+<div id="tab-rhythm" class="tab-content">
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#FFF0D0">📅</span>Weekly Operating Rhythm</h2>
+    <div class="subtitle">Repeat this every single week without thinking about it.</div>
+
+    <div class="day-card">
+      <h4>Wednesday</h4>
+      <div class="day-tasks">
+        <span class="day-task">Mentor attendance check</span>
+      </div>
+    </div>
+    <div class="day-card">
+      <h4>Thursday</h4>
+      <div class="day-tasks">
+        <span class="day-task">Final workshop confirmation</span>
+      </div>
+    </div>
+    <div class="day-card">
+      <h4>Friday</h4>
+      <div class="day-tasks">
+        <span class="day-task">Parent reminder email</span>
+        <span class="day-task">Mentor reminder email</span>
+        <span class="day-task">Social media post</span>
+      </div>
+    </div>
+    <div class="day-card saturday">
+      <h4>Saturday ⭐</h4>
+      <div class="day-tasks">
+        <span class="day-task">Program delivery</span>
+        <span class="day-task">Attendance tracking</span>
+        <span class="day-task">Photos</span>
+        <span class="day-task">Collect feedback</span>
+      </div>
+    </div>
+    <div class="day-card">
+      <h4>Monday</h4>
+      <div class="day-tasks">
+        <span class="day-task">Debrief</span>
+        <span class="day-task">Plan next session</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#E6F4EC">📆</span>Monthly Planning Rhythm</h2>
+    <div class="subtitle">Stay 30+ days ahead, always.</div>
+    <div class="day-card"><h4>Week 1 — Deliver</h4><div class="day-tasks"><span class="day-task">Deliver current workshop</span></div></div>
+    <div class="day-card"><h4>Week 2 — Finalize</h4><div class="day-tasks"><span class="day-task">Lock in next month's workshops</span></div></div>
+    <div class="day-card"><h4>Week 3 — Book</h4><div class="day-tasks"><span class="day-task">Secure speakers 30+ days out</span></div></div>
+    <div class="day-card"><h4>Week 4 — Review</h4><div class="day-tasks"><span class="day-task">Review attendance</span><span class="day-task">Engagement check</span><span class="day-task">Fundraising review</span></div></div>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#FFF0D0">🚀</span>Workshop Pipeline</h2>
+    <div class="subtitle">At all times, you should know the status of every upcoming session.</div>
+    <table class="pipeline">
+      <thead>
+        <tr>
+          <th>Timeframe</th>
+          <th>Required Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Next Saturday</td><td><span class="status green">Fully approved</span></td></tr>
+        <tr><td>2 Weeks Out</td><td><span class="status green">Speaker confirmed</span></td></tr>
+        <tr><td>1 Month Out</td><td><span class="status yellow">Planned</span></td></tr>
+        <tr><td>2 Months Out</td><td><span class="status red">Ideas identified</span></td></tr>
+      </tbody>
+    </table>
+    <div class="callout" style="margin-top:20px">
+      <div class="callout-head">Golden Rule</div>
+      <p>Never be planning next week's workshop the week of.</p>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#FFF0D0">🗓</span>Weekly Leadership Meeting <span style="font-size:13px;font-weight:500;color:var(--warm-gray)">(30 min)</span></h2>
+    <div class="subtitle">Joe + Anyla + Leadership Team</div>
+
+    <div class="day-card" style="border-left-color:var(--gold)">
+      <h4 style="margin-bottom:10px">Agenda — 5 Minutes Each</h4>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;"><span style="background:var(--gold);color:white;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;padding:3px 9px;border-radius:20px;flex-shrink:0">1</span>Attendance numbers</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;"><span style="background:var(--gold);color:white;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;padding:3px 9px;border-radius:20px;flex-shrink:0">2</span>Mentor status</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;"><span style="background:var(--gold);color:white;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;padding:3px 9px;border-radius:20px;flex-shrink:0">3</span>Workshop status</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;"><span style="background:var(--gold);color:white;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;padding:3px 9px;border-radius:20px;flex-shrink:0">4</span>Outreach / fundraising</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;"><span style="background:var(--gold);color:white;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;padding:3px 9px;border-radius:20px;flex-shrink:0">5</span>Upcoming field trip</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:15px;"><span style="background:var(--gold);color:white;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;padding:3px 9px;border-radius:20px;flex-shrink:0">6</span>Roadblocks and decisions</div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:16px">
+      <div class="callout-head">Every task must have:</div>
+      <p>An <strong>Owner</strong> · A <strong>Due Date</strong> · A Status: <span style="color:#7FD49A">Green</span> / <span style="color:#FFD966">Yellow</span> / <span style="color:#FF9E9E">Red</span></p>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#E6F4EC">📋</span>Monthly Leadership Meeting <span style="font-size:13px;font-weight:500;color:var(--warm-gray)">(30 min)</span></h2>
+    <div class="subtitle">Board reviews outcomes — not just activity.</div>
+
+    <div class="section-title">IMPACT METRICS</div>
+    <div class="day-card">
+      <div class="day-tasks">
+        <span class="day-task">Girls enrolled</span>
+        <span class="day-task">Average attendance</span>
+        <span class="day-task">Mentor attendance</span>
+        <span class="day-task">Retention rate</span>
+        <span class="day-task">Parent satisfaction</span>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:16px">GROWTH METRICS</div>
+    <div class="day-card">
+      <div class="day-tasks">
+        <span class="day-task">New mentor applications</span>
+        <span class="day-task">Partnership meetings</span>
+        <span class="day-task">Social media growth</span>
+        <span class="day-task">Community events attended</span>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:16px">FINANCIAL METRICS</div>
+    <div class="day-card">
+      <div class="day-tasks">
+        <span class="day-task">Sponsorship dollars</span>
+        <span class="day-task">Donations received</span>
+        <span class="day-task">Grants submitted</span>
+        <span class="day-task">Event revenue</span>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:16px">PROGRAM METRICS</div>
+    <div class="day-card">
+      <div class="day-tasks">
+        <span class="day-task">Workshops delivered</span>
+        <span class="day-task">Speakers booked</span>
+        <span class="day-task">Field trips completed</span>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:16px">FUNDRAISING</div>
+    <div class="day-card">
+      <div class="day-tasks">
+        <span class="day-task">Sponsorships</span>
+        <span class="day-task">Donations</span>
+        <span class="day-task">Grants</span>
+        <span class="day-task">Fundraising events</span>
+        <span class="day-task">In-kind donations</span>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:16px">COMMUNITY OUTREACH</div>
+    <div class="day-card">
+      <div class="day-tasks">
+        <span class="day-task">School partnerships</span>
+        <span class="day-task">Churches</span>
+        <span class="day-task">Businesses</span>
+        <span class="day-task">Community organizations</span>
+        <span class="day-task">Volunteer recruitment</span>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:16px">PUBLIC RELATIONS</div>
+    <div class="day-card">
+      <div class="day-tasks">
+        <span class="day-task">Speaking opportunities</span>
+        <span class="day-task">Media coverage</span>
+        <span class="day-task">Community presence</span>
+        <span class="day-task">Strategic partnerships</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ TAB: METRICS ══════════════ -->
+<div id="tab-metrics" class="tab-content">
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#E6F4EC">📊</span>Program Status Dashboard</h2>
+    <div class="subtitle">Update these numbers each week. Tap any number to edit.</div>
+
+    <div class="section-title">STUDENTS</div>
+    <div class="metric-grid">
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Registered</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Confirmed</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Attending</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Retention %</div></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-title">MENTORS</div>
+    <div class="metric-grid">
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Total Mentors</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">BG Checks ✓</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Attending Sat.</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">New Inquiries</div></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-title">ENGAGEMENT</div>
+    <div class="metric-grid">
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Social Posts</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Parent Emails</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Mentor Check-ins</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Partnership Convos</div></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-title">FINANCIAL</div>
+    <div class="metric-grid">
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Sponsorships $</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Donations $</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Grants Submitted</div></div>
+      <div class="metric-card"><input type="number" value="0" min="0"><div class="metric-label">Event Revenue $</div></div>
+    </div>
+
+    <button class="btn-save" onclick="showToast('Dashboard saved ✓')">Save Dashboard Numbers</button>
+  </div>
+
+  <!-- MENTEE ROSTER -->
+  <div class="section-card">
+    <h2><span class="icon" style="background:#FFF0D0">👧</span>Mentee Roster</h2>
+    <div class="subtitle">Add each girl's info. Tap a card to expand. All data stays in this browser session.</div>
+
+    <div id="mentee-list"></div>
+
+    <button onclick="addMentee()" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;background:transparent;border:2px dashed var(--border);border-radius:14px;font-family:'Sora',sans-serif;font-size:15px;font-weight:600;color:var(--gold);cursor:pointer;margin-top:4px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <span style="font-size:20px">+</span> Add Mentee
+    </button>
+
+    <div style="display:flex;gap:10px;margin-top:14px;">
+      <button class="btn-save" style="flex:1" onclick="saveMentees()">Save Roster</button>
+      <button onclick="exportRoster()" style="flex:0 0 auto;padding:16px 20px;background:var(--brown);color:white;border:none;border-radius:14px;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;cursor:pointer;">⬇ Export</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ TAB: MEETING ══════════════ -->
+<div id="tab-meeting" class="tab-content">
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#FFF0D0">🗓</span>Weekly Leadership Meeting</h2>
+    <div class="subtitle">Joe + Anyla + Leadership Team — 30 minutes, every week.</div>
+
+    <div class="callout" style="margin-top:0;margin-bottom:20px">
+      <div class="callout-head">Agenda (5 minutes each)</div>
+      <p>1. Attendance numbers &nbsp;·&nbsp; 2. Mentor status &nbsp;·&nbsp; 3. Workshop status &nbsp;·&nbsp; 4. Outreach/fundraising &nbsp;·&nbsp; 5. Field trip update &nbsp;·&nbsp; 6. Roadblocks</p>
+    </div>
+
+    <div class="worksheet-field">
+      <label>Meeting Date</label>
+      <input type="date" />
+    </div>
+
+    <div class="section-title">AGENDA ITEMS — CHECK WHEN COVERED</div>
+    <ul class="checklist" id="meeting-check">
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Attendance numbers reviewed<div class="check-owner">5 min</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Mentor status reviewed<div class="check-owner">5 min</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Workshop status confirmed<div class="check-owner">5 min</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Outreach & fundraising update<div class="check-owner">5 min</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Field trip progress discussed<div class="check-owner">5 min</div></div></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><div class="check-text">Roadblocks identified and assigned<div class="check-owner">5 min</div></div></li>
+    </ul>
+
+    <div class="divider"></div>
+    <div class="section-title">ACTION ITEMS FROM THIS MEETING</div>
+
+    <div id="action-items">
+      <div class="action-item" style="display:grid;grid-template-columns:1fr 140px;gap:8px;margin-bottom:10px;align-items:start">
+        <div class="worksheet-field" style="margin:0"><input type="text" placeholder="What needs to happen..." /></div>
+        <div class="worksheet-field" style="margin:0">
+          <select>
+            <option value="">Owner</option>
+            <option>Anyla</option>
+            <option>Nidia</option>
+            <option>Alicia</option>
+            <option>Daizha</option>
+            <option>Mentor Coord</option>
+            <option>Program Lead</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button onclick="addActionItem()" style="background:transparent;border:2px dashed var(--border);border-radius:12px;padding:10px;width:100%;font-family:'Sora',sans-serif;font-size:14px;color:var(--warm-gray);cursor:pointer;margin-bottom:16px;">+ Add Action Item</button>
+
+    <div class="callout">
+      <div class="callout-head">Every task must have:</div>
+      <p>An <strong>Owner</strong> · A <strong>Due Date</strong> · A Status: <span style="color:#7FD49A">Green</span> / <span style="color:#FFD966">Yellow</span> / <span style="color:#FF9E9E">Red</span></p>
+    </div>
+
+    <button class="btn-save" onclick="showToast('Meeting notes saved ✓')">Save Meeting Notes</button>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="icon" style="background:#E6F4EC">🔁</span>Sub Coverage</h2>
+    <div class="subtitle">Who steps in when a role owner can't attend? Decide now.</div>
+    <div class="worksheet-field">
+      <label>Anyla's sub when absent</label>
+      <input type="text" placeholder="Name..." />
+    </div>
+    <div class="worksheet-field">
+      <label>Nidia's sub when absent</label>
+      <input type="text" placeholder="Name..." />
+    </div>
+    <div class="worksheet-field">
+      <label>Alicia's sub when absent</label>
+      <input type="text" placeholder="Name..." />
+    </div>
+    <div class="worksheet-field">
+      <label>Daizha's sub when absent</label>
+      <input type="text" placeholder="Name..." />
+    </div>
+    <button class="btn-save" onclick="showToast('Sub assignments saved ✓')">Save Sub Assignments</button>
+  </div>
+
+</div>
+
+</main>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+  // Tab switching
+  function switchTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+    updateProgress();
+  }
+
+  // Toggle checklist items
+  function toggle(el) {
+    el.classList.toggle('done');
+    const box = el.querySelector('.check-box');
+    box.textContent = el.classList.contains('done') ? '✓' : '';
+    updateProgress();
+  }
+
+  // Progress bar
+  function updateProgress() {
+    const all = document.querySelectorAll('.checklist li');
+    const done = document.querySelectorAll('.checklist li.done');
+    const pct = all.length > 0 ? (done.length / all.length) * 100 : 0;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progress-count').textContent = `${done.length} of ${all.length} items checked`;
+  }
+
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  // Add action item row
+  function addActionItem() {
+    const container = document.getElementById('action-items');
+    const div = document.createElement('div');
+    div.style.cssText = 'display:grid;grid-template-columns:1fr 140px;gap:8px;margin-bottom:10px;align-items:start';
+    div.innerHTML = `
+      <div class="worksheet-field" style="margin:0"><input type="text" placeholder="What needs to happen..." /></div>
+      <div class="worksheet-field" style="margin:0">
+        <select>
+          <option value="">Owner</option>
+          <option>Anyla</option>
+          <option>Nidia</option>
+          <option>Alicia</option>
+          <option>Daizha</option>
+          <option>Mentor Coord</option>
+          <option>Program Lead</option>
+        </select>
+      </div>`;
+    container.appendChild(div);
+  }
+
+  updateProgress();
+
+  // ── MENTEE ROSTER ──
+  let mentees = [];
+  let menteeIdCounter = 0;
+
+  function addMentee(data) {
+    const id = ++menteeIdCounter;
+    const m = data || { id, firstName: '', lastName: '', age: '', school: '', grade: '', status: 'pending',
+      phone: '', email: '', parentName: '', parentPhone: '', parentEmail: '',
+      ecName: '', ecRelation: '', ecPhone: '', notes: '' };
+    if (!data) { m.id = id; mentees.push(m); }
+    renderMenteeCard(m);
+    updateMenteeCount();
+    // Auto-open the new card
+    const card = document.getElementById('mentee-' + m.id);
+    if (card) {
+      card.querySelector('.mentee-body').classList.add('open');
+      card.querySelector('.mentee-toggle').classList.add('open');
+      card.querySelector('.mentee-body input')?.focus();
+    }
+  }
+
+  function renderMenteeCard(m) {
+    const list = document.getElementById('mentee-list');
+    const div = document.createElement('div');
+    div.className = 'mentee-card';
+    div.id = 'mentee-' + m.id;
+    div.innerHTML = `
+      <div class="mentee-header" onclick="toggleMenteeCard(${m.id})">
+        <div class="mentee-avatar" id="av-${m.id}">${m.firstName ? m.firstName[0].toUpperCase() : '?'}</div>
+        <div class="mentee-name-preview ${m.firstName ? '' : 'placeholder'}" id="np-${m.id}">
+          ${m.firstName ? (m.firstName + ' ' + m.lastName).trim() : 'New Mentee'}
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:10px;height:10px;border-radius:50%;background:${m.status==='confirmed'?'#4A8C5C':m.status==='waitlist'?'#7A6A5A':'#E0A800'};flex-shrink:0" id="sd-${m.id}"></div>
+          <div class="mentee-toggle" id="tog-${m.id}">▾</div>
+        </div>
+      </div>
+      <div class="mentee-body" id="mb-${m.id}">
+        <div class="mentee-grid">
+
+          <div class="mentee-section-label">MENTEE INFO</div>
+
+          <div class="mentee-field full">
+            <label>First Name</label>
+            <input type="text" value="${m.firstName}" placeholder="First name"
+              oninput="updateMenteeField(${m.id},'firstName',this.value)">
+          </div>
+          <div class="mentee-field full">
+            <label>Last Name</label>
+            <input type="text" value="${m.lastName}" placeholder="Last name"
+              oninput="updateMenteeField(${m.id},'lastName',this.value)">
+          </div>
+          <div class="mentee-field">
+            <label>Age</label>
+            <input type="number" value="${m.age}" placeholder="Age" min="5" max="18"
+              oninput="updateMenteeField(${m.id},'age',this.value)">
+          </div>
+          <div class="mentee-field">
+            <label>Grade</label>
+            <input type="text" value="${m.grade}" placeholder="e.g. 7th"
+              oninput="updateMenteeField(${m.id},'grade',this.value)">
+          </div>
+          <div class="mentee-field full">
+            <label>School</label>
+            <input type="text" value="${m.school}" placeholder="School name"
+              oninput="updateMenteeField(${m.id},'school',this.value)">
+          </div>
+          <div class="mentee-field full">
+            <label>Status</label>
+            <select onchange="updateMenteeField(${m.id},'status',this.value)" id="st-${m.id}">
+              <option value="pending" ${m.status==='pending'?'selected':''}>⏳ Pending</option>
+              <option value="confirmed" ${m.status==='confirmed'?'selected':''}>✅ Confirmed</option>
+              <option value="waitlist" ${m.status==='waitlist'?'selected':''}>📋 Waitlist</option>
+            </select>
+          </div>
+
+          <div class="mentee-section-label">MENTEE CONTACT</div>
+
+          <div class="mentee-field full">
+            <label>Phone (if applicable)</label>
+            <input type="tel" value="${m.phone}" placeholder="(509) 000-0000"
+              oninput="updateMenteeField(${m.id},'phone',this.value)">
+          </div>
+          <div class="mentee-field full">
+            <label>Email (if applicable)</label>
+            <input type="email" value="${m.email}" placeholder="email@example.com"
+              oninput="updateMenteeField(${m.id},'email',this.value)">
+          </div>
+
+          <div class="mentee-section-label">PARENT / GUARDIAN</div>
+
+          <div class="mentee-field full">
+            <label>Parent / Guardian Name</label>
+            <input type="text" value="${m.parentName}" placeholder="Full name"
+              oninput="updateMenteeField(${m.id},'parentName',this.value)">
+          </div>
+          <div class="mentee-field full">
+            <label>Parent Phone</label>
+            <input type="tel" value="${m.parentPhone}" placeholder="(509) 000-0000"
+              oninput="updateMenteeField(${m.id},'parentPhone',this.value)">
+          </div>
+          <div class="mentee-field full">
+            <label>Parent Email</label>
+            <input type="email" value="${m.parentEmail}" placeholder="email@example.com"
+              oninput="updateMenteeField(${m.id},'parentEmail',this.value)">
+          </div>
+
+          <div class="mentee-section-label">EMERGENCY CONTACT</div>
+
+          <div class="mentee-field full">
+            <label>Emergency Contact Name</label>
+            <input type="text" value="${m.ecName}" placeholder="Full name"
+              oninput="updateMenteeField(${m.id},'ecName',this.value)">
+          </div>
+          <div class="mentee-field">
+            <label>Relationship</label>
+            <input type="text" value="${m.ecRelation}" placeholder="e.g. Aunt"
+              oninput="updateMenteeField(${m.id},'ecRelation',this.value)">
+          </div>
+          <div class="mentee-field">
+            <label>EC Phone</label>
+            <input type="tel" value="${m.ecPhone}" placeholder="(509) 000-0000"
+              oninput="updateMenteeField(${m.id},'ecPhone',this.value)">
+          </div>
+
+          <div class="mentee-section-label">NOTES</div>
+
+          <div class="mentee-field full">
+            <label>Additional Notes</label>
+            <input type="text" value="${m.notes}" placeholder="Allergies, special needs, anything else..."
+              oninput="updateMenteeField(${m.id},'notes',this.value)">
+          </div>
+
+        </div>
+        <button class="delete-mentee" onclick="deleteMentee(${m.id})">🗑 Remove This Mentee</button>
+      </div>`;
+    list.appendChild(div);
+  }
+
+  function toggleMenteeCard(id) {
+    const body = document.getElementById('mb-' + id);
+    const tog = document.getElementById('tog-' + id);
+    body.classList.toggle('open');
+    tog.classList.toggle('open');
+  }
+
+  function updateMenteeField(id, field, val) {
+    const m = mentees.find(x => x.id === id);
+    if (!m) return;
+    m[field] = val;
+    // Update header preview
+    if (field === 'firstName' || field === 'lastName') {
+      const np = document.getElementById('np-' + id);
+      const av = document.getElementById('av-' + id);
+      const name = (m.firstName + ' ' + m.lastName).trim();
+      np.textContent = name || 'New Mentee';
+      np.classList.toggle('placeholder', !name);
+      av.textContent = m.firstName ? m.firstName[0].toUpperCase() : '?';
+    }
+    if (field === 'status') {
+      const sd = document.getElementById('sd-' + id);
+      sd.style.background = val === 'confirmed' ? '#4A8C5C' : val === 'waitlist' ? '#7A6A5A' : '#E0A800';
+    }
+  }
+
+  function deleteMentee(id) {
+    if (!confirm('Remove this mentee from the roster?')) return;
+    mentees = mentees.filter(x => x.id !== id);
+    const card = document.getElementById('mentee-' + id);
+    card.style.opacity = '0';
+    card.style.transform = 'scale(0.95)';
+    card.style.transition = 'all 0.2s';
+    setTimeout(() => card.remove(), 200);
+    updateMenteeCount();
+  }
+
+  function updateMenteeCount() {
+    // update subtitle count
+    const count = mentees.length;
+    const badge = document.getElementById('mentee-count-badge');
+    if (badge) badge.textContent = count;
+  }
+
+  function saveMentees() {
+    try {
+      localStorage.setItem('bigsis_mentees', JSON.stringify(mentees));
+      showToast('Roster saved ✓ (' + mentees.length + ' mentees)');
+    } catch(e) {
+      showToast('Saved in session ✓');
+    }
+  }
+
+  function exportRoster() {
+    if (mentees.length === 0) { showToast('No mentees to export yet'); return; }
+    const rows = [['First Name','Last Name','Age','Grade','School','Status','Phone','Email',
+      'Parent Name','Parent Phone','Parent Email','EC Name','EC Relation','EC Phone','Notes']];
+    mentees.forEach(m => rows.push([m.firstName,m.lastName,m.age,m.grade,m.school,m.status,
+      m.phone,m.email,m.parentName,m.parentPhone,m.parentEmail,m.ecName,m.ecRelation,m.ecPhone,m.notes]));
+    const csv = rows.map(r => r.map(v => '"'+(v||'').replace(/"/g,'""')+'"').join(',')).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'BigSis_Mentee_Roster.csv';
+    a.click();
+    showToast('Roster exported ✓');
+  }
+
+  // Load saved mentees if available
+  try {
+    const saved = localStorage.getItem('bigsis_mentees');
+    if (saved) {
+      const data = JSON.parse(saved);
+      data.forEach(m => { mentees.push(m); menteeIdCounter = Math.max(menteeIdCounter, m.id); renderMenteeCard(m); });
+      updateMenteeCount();
+    }
+  } catch(e) {}
+</script>
+</body>
+</html>
